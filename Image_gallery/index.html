@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="galleryContainer">
+      <h1>Image Gallery</h1>
+      <div class="gallery">
+        <img src="images/R (18).jpg" alt="Image 1" class="gallery-item" />
+        <img src="images/R (23).jpg" alt="Image 2" class="gallery-item" />
+        <img
+          src="images/lune_et_v_nus_en_atacama.jpg"
+          alt="Image 3"
+          class="gallery-item"
+        />
+        <img
+          src="images/les_plus_beaux_lacs_du_monde_lago_toree_argentine1_1024x660.jpg"
+          alt="Image 4"
+          class="gallery-item"
+        />
+        <img
+          src="images/paysageCanada.jpg"
+          alt="Image 5"
+          class="gallery-item"
+        />
+        <img
+          src="images/lumiere_zodiacale_venus_mauna_kea.jpg"
+          alt="Image 6"
+          class="gallery-item"
+        />
+        <img src="images/R (25).jpg" alt="Image 7" class="gallery-item" />
+        <img src="images/R (6).jpg" alt="Image 8" class="gallery-item" />
+        <img src="images/R (4).jpg" alt="Image 9" class="gallery-item" />
+        <img src="images/R (30).jpg" alt="Image 10" class="gallery-item" />
+      </div>
+    </div>
+
+    <div class="modal">
+      <span class="close">&times;</span>
+      <div class="modal-in">
+        <div class="prev" onclick="changeImage(-1)">
+          <button onclick="changeImage(-1)">&#10094;</button>
+        </div>
+        <img src="" alt="" class="modal-content" />
+        <div class="next" onclick="changeImage(1)">
+          <button onclick="changeImage(1)">&#10095;</button>
+        </div>
+      </div>
+      <div id="caption"></div>
+    </div>
+  </body>
+</html>

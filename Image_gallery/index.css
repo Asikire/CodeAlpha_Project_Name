@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.galleryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  max-height: 10vh;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  gap: 20px;
+  height: 90vh;
+  overflow: scroll;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:nth-child(6n + 2) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  position: absolute;
+  bottom: 15px;
+  left: 35px;
+  color: white;
+}
+
+.modal-in {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  height: 65%;
+}
+
+.modal .prev,
+.modal .next {
+  width: auto;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .prev {
+  left: 0;
+}
+
+.modal .next {
+  right: 0;
+}
+
+.modal .prev button,
+.modal .next button {
+  width: auto;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.6s ease;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  cursor: pointer;
+}
+
+.modal-content {
+  /* margin: auto; */
+  display: block;
+  /* width: 65%; */
+  transition: transform 0.2s;
+}
+
+.modal-content:hover {
+  transform: scale(1.05); /* Effet de zoom */
+}
+
+@media (max-width: 900px) {
+  .gallery-item {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+
+  .modal-content {
+    width: 65%;
+    height: auto;
+  }
+
+  .modal-in {
+    height: auto;
+    top: 30%;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal-in {
+    height: auto;
+    top: 40%;
+  }
+}
