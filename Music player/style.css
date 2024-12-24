@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.music-player {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  background-color: #0c0509;
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+#volume {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 6px;
+  background-color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #0c0509;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, alpha);
+}
+
+#progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #0c0509;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 8px solid #333;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, alpha);
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+#play {
+  scale: calc(1.5);
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  font-size: 1em;
+  padding: 10px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #232523;
+}
+
+.track-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#track-title {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #232523;
+  margin-top: 20px;
+}
+
+#track-duration {
+  font-size: 14px;
+  font-weight: 500;
+  color: #232523;
+  margin-top: 40px;
+}
+
+.volume-control {
+  margin: 15px 0;
+}
+
+.playlist {
+  margin-top: 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playlist ul {
+  list-style-type: none;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.playlist li {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.playlist li:hover {
+  background-color: #232523;
+  color: white;
+}

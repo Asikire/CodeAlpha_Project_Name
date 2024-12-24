@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecteur de Musique</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="music-player">
+      <h1>Lecteur de Musique</h1>
+      <div class="volume-control">
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="1"
+          step="0.01"
+          value=""
+          oninput="setVolume(this.value)"
+        />
+
+        <div class="track-info">
+          <p id="track-title">Titre de la piste</p>
+          <p id="track-duration">00:00/00:00</p>
+        </div>
+
+        <div class="progress-control">
+          <input type="range" id="progress" value="0" />
+        </div>
+      </div>
+      <audio src="" id="audio">
+        <source id="audio-source" src="" type="audio/mpeg" />
+      </audio>
+      <div class="controls">
+        <button id="prev" onclick="prevTrack()">&#x23EE;</button>
+        <button id="play" onclick="togglePlay()">&#x25B6;</button>
+        <button id="next" onclick="nextTrack()">&#x23ED;</button>
+      </div>
+
+      <div class="playlist">
+        <h2 class="h2">Liste de Lecture</h2>
+        <ul id="playlist-ul"></ul>
+      </div>
+    </div>
+  </body>
+</html>
